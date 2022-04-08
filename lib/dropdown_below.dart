@@ -385,22 +385,19 @@ class _DropdownRoute<T> extends PopupRoute<_DropdownRouteResult<T>> {
       context: context,
       removeTop: true,
       removeBottom: true,
-      removeLeft: true,
-      removeRight: true,
+      removeLeft: false,
+      removeRight: false,
       child: Builder(
         builder: (BuildContext context) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: CustomSingleChildLayout(
-              delegate: _DropdownMenuRouteLayout<T>(
-                itemWidth: itemWidth,
-                buttonRect: buttonRect,
-                menuTop: menuTop,
-                menuHeight: menuHeight,
-                textDirection: textDirection,
-              ),
-              child: menu,
+          return CustomSingleChildLayout(
+            delegate: _DropdownMenuRouteLayout<T>(
+              itemWidth: itemWidth,
+              buttonRect: buttonRect,
+              menuTop: menuTop,
+              menuHeight: menuHeight,
+              textDirection: textDirection,
             ),
+            child: menu,
           );
         },
       ),
