@@ -264,7 +264,7 @@ class _DropdownMenuRouteLayout<T> extends SingleChildLayoutDelegate {
         left = buttonRect!.left.clamp(0.0, size.width - childSize.width);
         break;
     }
-    return Offset(left + 0, menuTop + 13);
+    return Offset(left + 0, menuTop + 0);
   }
 
   @override
