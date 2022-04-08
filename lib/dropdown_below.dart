@@ -264,7 +264,7 @@ class _DropdownMenuRouteLayout<T> extends SingleChildLayoutDelegate {
         left = buttonRect!.left.clamp(0.0, size.width - childSize.width);
         break;
     }
-    return Offset(left + 60, menuTop + 13);
+    return Offset(left + 0, menuTop + 13);
   }
 
   @override
@@ -389,15 +389,18 @@ class _DropdownRoute<T> extends PopupRoute<_DropdownRouteResult<T>> {
       removeRight: true,
       child: Builder(
         builder: (BuildContext context) {
-          return CustomSingleChildLayout(
-            delegate: _DropdownMenuRouteLayout<T>(
-              itemWidth: itemWidth,
-              buttonRect: buttonRect,
-              menuTop: menuTop,
-              menuHeight: menuHeight,
-              textDirection: textDirection,
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: CustomSingleChildLayout(
+              delegate: _DropdownMenuRouteLayout<T>(
+                itemWidth: itemWidth,
+                buttonRect: buttonRect,
+                menuTop: menuTop,
+                menuHeight: menuHeight,
+                textDirection: textDirection,
+              ),
+              child: menu,
             ),
-            child: menu,
           );
         },
       ),
